@@ -1,4 +1,4 @@
-# Smile CDR Coding Test
+# Jay Jang tasks using Angular 12 
 
 ### Basic Tasks:
 
