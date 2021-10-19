@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playground Test App</title>
+</head>
+<body>
+  <mat-toolbar color="primary">
+    <span class="material-icons">assignment</span>
+    <span class="application-title">Playground Test App</span>
+  </mat-toolbar>
+
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="firstName">First Name</th>
+      <th mat-sort-header="lastName">Last Name</th>
+      <th mat-sort-header="birthdate">Birthdate</th>
+      <th>Address</th>
+      <th>Genger</th>
+      <th>Phone Number</th>
+    </tr>
+  
+    <tr *ngFor="let patient of sortedData">
+      <td>{{patient.firstName}}</td>
+      <td>{{patient.lastName}}</td>
+      <td>{{patient.birthdate}}</td>
+      <td>{{patient.address}}</td>
+      <td>{{patient.gender}}</td>
+      <td>{{patient.phone}}</td>
+    </tr>
+  </table>
+ <div class="reqtime">*Request time in estimated {{reqTime}}second</div>
+ <div class="search">
+  <mat-form-field class="searchfname">
+    <input type="text" matInput #fname name="fname" placeholder="First Name" >
+  </mat-form-field>
+  <mat-form-field class="searchlname">
+    <input type="text" matInput #lname name="lname" placeholder="Last Name">
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="btn" (click)="search(fname.value, lname.value)">Search</button>
+  <button mat-raised-button color="accent" class="btn" (click)="reset(); lname.value='';fname.value='';">Reset</button>
+ </div>
+  <table *ngIf="searchData != null">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Birthdate</th>
+      <th>Address</th>
+      <th>Genger</th>
+      <th>Phone Number</th>
+    </tr>
+
+    <tr *ngFor="let search of searchData">
+      <td>{{search.firstName}}</td>
+      <td>{{search.lastName}}</td>
+      <td>{{search.birthdate}}</td>
+      <td>{{search.address}}</td>
+      <td>{{search.gender}}</td>
+      <td>{{search.phone}}</td>
+    </tr>
+  </table>
+</body>
+</html>

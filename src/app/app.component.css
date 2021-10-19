@@ -1,0 +1,40 @@
+.mat-app-background{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 360px;
+}
+
+.application-title{
+    padding-left: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fill-remaining-space {
+    flex: 1;
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    border: 1px solid black;
+  }
+
+.reqtime{
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+
+.searchfname{
+    margin-right: 10px;
+}
+
+.btn {
+    margin-left: 10px;
+}
