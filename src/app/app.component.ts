@@ -1,6 +1,6 @@
 import { PatientsApiService } from './services/patients-api.service';
 import { Patient } from './model/patient';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -46,6 +46,7 @@ export class AppComponent implements OnInit{
   }
 
   async search(fnameSearch:string, lnameSearch:string){
+    this.reset();
     if (fnameSearch === ""  && lnameSearch === "") {
       console.log("Please input any name");
       return;
@@ -55,6 +56,18 @@ export class AppComponent implements OnInit{
 
   reset(){
     this.searchData = null;
+  }
+
+  keyPressAlphabetic(event: any) {
+
+    var inp = String.fromCharCode(event.keyCode);
+
+    if (/[a-zA-Z]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
   }
 
 }

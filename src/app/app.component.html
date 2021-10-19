@@ -34,10 +34,10 @@
  <div class="reqtime">*Request time in estimated {{reqTime}}second</div>
  <div class="search">
   <mat-form-field class="searchfname">
-    <input type="text" matInput #fname name="fname" placeholder="First Name" >
+    <input type="text" matInput #fname name="fname" placeholder="First Name" (keypress)="keyPressAlphabetic($event)">
   </mat-form-field>
   <mat-form-field class="searchlname">
-    <input type="text" matInput #lname name="lname" placeholder="Last Name">
+    <input type="text" matInput #lname name="lname" placeholder="Last Name" (keypress)="keyPressAlphabetic($event)">
   </mat-form-field>
   <button mat-raised-button color="primary" class="btn" (click)="search(fname.value, lname.value)">Search</button>
   <button mat-raised-button color="accent" class="btn" (click)="reset(); lname.value='';fname.value='';">Reset</button>
